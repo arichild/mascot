@@ -1,0 +1,111 @@
+.footer {
+  background: #F1F1F1;
+  padding: 40px 0;
+
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 68px;
+  }
+
+  &-bottom {
+    a {
+      color: #767F86;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.28px;
+      text-decoration-line: underline;
+      margin-right: 24px;
+      transition: color .2s ease-in-out;
+
+      &:hover {
+        color: #D0033F;
+      }
+    }
+  }
+
+  &-logo {
+    line-height: 0;
+    margin-right: 100px;
+  }
+
+  &-nav {
+    display: inline-block;
+
+    a {
+      font-weight: 500;
+      color: #767F86;
+
+      &:hover {
+        color: #161515;
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-contacts {
+    display: inline-block;
+    vertical-align: top;
+    color: #767F86;
+    font-weight: 500;
+    margin-right: 48px;
+
+    a {
+      display: block;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+  }
+
+  &-socials {
+    display: inline-block;
+    vertical-align: top;
+
+    a {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #767F86;
+      position: relative;
+      display: inline-block;
+      transition: background-color .2s ease-in-out;
+
+      &:first-child {
+        margin-right: 11px;
+      }
+
+      &:hover {
+        background-color: #D0033F;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      height: 60%;
+    }
+  }
+}

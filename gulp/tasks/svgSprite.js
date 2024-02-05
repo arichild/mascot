@@ -6,10 +6,11 @@ export const svg = () => {
 	return app.gulp.src(app.path.src.svg)
     .pipe(cheerio({
       run: function ($) {
-        $('[fill]').removeAttr('fill');
-        $('[stroke]').removeAttr('stroke');
-        $('[style]').removeAttr('style');
-        $('[class]').removeAttr('class');
+        // $('[fill]').removeAttr('fill');
+        // $('[stroke]').removeAttr('stroke');
+        // $('[stroke]').attr('stroke', 'currentColor');
+        // $('[style]').removeAttr('style');
+        // $('[class]').removeAttr('class');
       },
       parserOptions: { xmlMode: true }
     }))

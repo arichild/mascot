@@ -8,13 +8,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
 
-  <title>Start-project</title>
+  <title>mascot</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- splide -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/4.1.4/css/splide.min.css" integrity="sha512-KhFXpe+VJEu5HYbJyKQs9VvwGB+jQepqb4ZnlhUF/jQGxYJcjdxOTf6cr445hOc791FFLs18DKVpfrQnONOB1g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- form styler -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/2.0.2/jquery.formstyler.min.css" integrity="sha512-qP7Bo11vBMwOisDf5u5XX4EG7PwtuTha6Ghh864As/xLSKdD5BbW5gVE2Tym6VerZFEev9OmmHV2BKuanp/WaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <!-- wrapper -->
 <div class="wrapper" id="wrapper">
-  <header class="header" id="header">
-    <h1>header</h1>
-  </header>
+  <div class="container">
+    <header class="header" id="header">
+      <div class="header-content flex">
+        <div class="header-content-left">
+          <div class="header-nav">
+            <ul>
+              <li>
+                <a href="#" class="active">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path id="leaf1" d="M17.722 7.9521L18.7012 4.29768C19.0053 3.16272 18.6131 2.56587 17.3332 2.22294L14.0813 1.35158C12.8014 1.00864 12.1633 1.32942 11.8592 2.46438L10.8822 6.11075C10.5759 7.25377 10.9703 7.84257 12.2501 8.1855L15.5021 9.05686C16.7798 9.40784 17.4179 9.08707 17.722 7.9521Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path id="leaf2" d="M18.6483 15.501L17.7769 12.2491C17.434 10.9692 16.7808 10.5921 15.5009 10.935L12.249 11.8064C10.9691 12.1493 10.592 12.8025 10.935 14.0824L11.8063 17.3343C12.1492 18.6142 12.8024 18.9913 14.0823 18.6484L17.3342 17.777C18.6141 17.4341 18.9912 16.7809 18.6483 15.501Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.74996 7.09996V3.31663C8.74996 2.14163 8.21663 1.66663 6.89163 1.66663H3.52496C2.19996 1.66663 1.66663 2.14163 1.66663 3.31663V7.09163C1.66663 8.27496 2.19996 8.74163 3.52496 8.74163H6.89163C8.21663 8.74996 8.74996 8.27496 8.74996 7.09996Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8.74996 16.475V13.1083C8.74996 11.7833 8.21663 11.25 6.89163 11.25H3.52496C2.19996 11.25 1.66663 11.7833 1.66663 13.1083V16.475C1.66663 17.8 2.19996 18.3333 3.52496 18.3333H6.89163C8.21663 18.3333 8.74996 17.8 8.74996 16.475Z"  stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Каталог
+                </a>
+              </li>
+              <li>
+                <a href="#">Корпоративным клиентам</a>
+              </li>
+              <li>
+                <a href="#">О бренде</a>
+              </li>
+              <li>
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="#" class="header-logo">
+          <img src="./images/logo.svg" alt="logo">
+        </a>
+
+        <div class="header-content-right">
+          <div class="header-cart">
+            <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-cart"></use></svg>
+            Корзина
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="ui-navbar">
+      <div class="ui-breadcrumbs">
+        <a href="#" class="ui-breadcrumbs-link">Главная</a>
+        <span>Каталог</span>
+      </div>
+
+      <a href="#" class="ui-back">
+        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-back"></use></svg>
+        Вернуться назад
+      </a>
+    </div>
+  </div>
