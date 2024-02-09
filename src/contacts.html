@@ -1,0 +1,155 @@
+<!--#include file="inc-header.html"-->
+
+<div class="middle" id="middle">
+  <div class="contacts">
+    <div class="container">
+      <div class="ui-navbar">
+        <div class="ui-breadcrumbs">
+          <a href="#" class="ui-breadcrumbs-link">Главная</a>
+          <span>Контакты</span>
+        </div>
+
+        <a href="#" class="ui-back">
+          <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-back"></use></svg>
+          Вернуться назад
+        </a>
+      </div>
+
+      <div class="contacts-block">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="contacts-info">
+              <div class="contacts-title">Как с нами связаться</div>
+
+              <div class="contacts-info-block">
+                <div class="contacts-info-content">
+                  <div class="contacts-info-title">Контактная информация</div>
+
+                  <div class="contacts-info-social">
+                    <a href="#">
+                      <div class="contacts-info-icon">
+                        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#email"></use></svg>
+                      </div>
+
+                      sales@mascotwear.shop
+                    </a>
+                    <a href="#">
+                      <div class="contacts-info-icon">
+                        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#whatsapp"></use></svg>
+                      </div>
+
+                      WhatsApp
+                    </a>
+                    <a href="#">
+                      <div class="contacts-info-icon">
+                        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#tg"></use></svg>
+                      </div>
+
+                      Telegram
+                    </a>
+                  </div>
+                </div>
+                <div class="contacts-info-content">
+                  <div class="contacts-info-title">Реквизиты о компании</div>
+
+                  <div class="contacts-info-requisites">
+                    <div class="contacts-info-inn">
+                      <span>ИНН 7734008006</span>
+                      <span>ИНН 7734008006</span>
+                    </div>
+
+                    <div class="contacts-info-txt">
+                      <span>Фактический адрес:</span> г. Москва, ул. Митинская, 40, ТЦ “Митино” 125430
+                    </div>
+                    <div class="contacts-info-txt">
+                      <span>Юридический адрес:</span>  г. Москва, ул. Живописная, 40, стр. 1, ком. 5 123098
+                    </div>
+                  </div>
+                </div>
+                <div class="contacts-info-content">
+                  <div class="contacts-info-other">
+                    <a href="#">
+                      <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-inst"></use></svg>
+                    </a>
+                    <a href="#">
+                      <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-fb"></use></svg>
+                    </a>
+                    <span>mascot.wear</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contacts-form">
+              <div class="contacts-title black">Напишите нам</div>
+
+              <form action="#" class="form-validate">
+                <div class="ui-fields">
+                  <div class="ui-field">
+                    <input type="text" class="ui-input" id="name" name="name" placeholder="Ваше ФИО">
+                  </div>
+                  <div class="ui-field">
+                    <input type="text" class="ui-input" id="email" name="email" placeholder="Ваш e-mail">
+                  </div>
+                  <div class="ui-field">
+                    <input type="text" class="ui-input phone-mask" id="phone" name="phone" placeholder="Ваш номер телефона">
+                  </div>
+                  <div class="ui-field">
+                    <textarea id="textbox" name="textbox" class="ui-input" rows="4" placeholder="Оставьте комментарий"></textarea>
+                  </div>
+                </div>
+
+                <button class="ui-btn black">Оставить заявку</button>
+
+                <div class="contacts-form-accept">
+                  Нажимая на кнопку «Отправить», вы соглашаетесь с <a href="#">политика обработки персональных данных</a>
+                </div>
+              </form>
+            </div>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                jQuery(document).ready(function ($) {
+                  $(".form-validate").validate({
+                    errorElement: "span",
+
+                    rules: {
+                      name: {
+                        required: true,
+                        lettersonly: true,
+                      },
+                      company: {
+                        required: true,
+                        // lettersonly: true,
+                      },
+                      phone: {
+                        required: true,
+                        phone: true,
+                      },
+                      email: {
+                        required: true,
+                        email: true,
+                      },
+                    },
+
+                    messages: {
+                      email: 'Введите корректный email',
+                    },
+
+
+                    submitHandler: function (form) {
+                      // showPopup('./popup/success.html')
+                    },
+                  });
+                })
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#include file="inc-footer.html"-->

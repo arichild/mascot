@@ -1,0 +1,30 @@
+.notfound {
+  text-align: center;
+  padding: 150px 0;
+
+  &-img {
+    line-height: 0;
+    margin-bottom: 50px;
+  }
+
+  &-txt {
+    max-width: 504px;
+    margin: 0 auto;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  &-title {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+
+  &-subtitle {
+    font-size: 18px;
+    color: #767F86;
+  }
+
+  .ui-btn {
+    max-width: 235px;
+  }
+}

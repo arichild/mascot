@@ -1,0 +1,160 @@
+.card {
+  margin-bottom: 100px;
+
+  &-collection {
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #D0033F;
+    margin-bottom: 4px;
+  }
+
+  &-title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &-article {
+    font-size: 13px;
+    font-weight: 400;
+    color: #767F86;
+  }
+
+  &-text {
+    margin-bottom: 24px;
+  }
+
+  &-desc {
+    margin-bottom: 14px;
+    max-width: 733px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-sizes {
+      margin-bottom: 10px;
+    }
+
+    &-content {
+      margin-bottom: 24px;
+    }
+
+    &-text {
+      padding-left: 10px;
+    }
+
+    ul {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        background-color: #161515;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        border-radius: 50%;
+      }
+    }
+
+    &-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+  }
+
+  &-price {
+    font-size: 30px;
+    font-weight: 600;
+    color: #D0033F;
+    margin-bottom: 24px;
+
+    span {
+      font-size: 24px;
+      font-weight: 400;
+      color: #767F86;
+      text-decoration: line-through;
+      margin-left: 20px;
+    }
+  }
+
+  &-control {
+    display: flex;
+    align-items: center;
+
+    .ui-btn {
+      margin-right: 24px;
+    }
+  }
+
+  &-tables {
+    a {
+      color: #161515;
+      text-decoration: underline dashed #D0033F;
+      text-underline-offset: 5px;
+      margin-right: 14px;
+      text-decoration-thickness: 1px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    span {
+      color: #767F86;
+    }
+  }
+
+  &-slider {
+    display: flex;
+
+    &-thumbnail {
+      max-width: 80px;
+      flex: 0 0 80px;
+      margin-right: 20px;
+
+      .splide__track--nav>.splide__list>.splide__slide.is-active {
+        border-color: #161515;
+      }
+
+      .splide__track--nav>.splide__list>.splide__slide {
+        border: 1px solid transparent;
+        border-radius: 10px;
+        padding: 4px;
+      }
+
+      .splide__slide img {
+        max-height: 80px;
+        border-radius: 10px;
+      }
+    }
+
+    &-main {
+      max-width: calc(100% - 100px);
+      flex: 0 0 calc(100% - 100px);
+
+      .splide__arrow {
+        width: 44px;
+        height: 44px;
+        background-color: #FFFFFF;
+      }
+    }
+  }
+
+}

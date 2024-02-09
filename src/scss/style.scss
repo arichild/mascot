@@ -10,7 +10,14 @@
 @import "./layout/inc-footer.scss";
 
 /* pages */
-@import "index";
+@import "catalog";
+@import "policy";
+@import "order-success";
+@import "404";
+@import "cart";
+@import "contacts";
+@import "order";
+@import "card";
 
 * {
   box-sizing: border-box;
@@ -35,8 +42,20 @@ body {
   font-weight: 400;
   font-size: rem(16px);
   line-height: 1.42;
-  color: #000;
+  color: #161515;
   background-color: #fff;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #F1F1F1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #D0033F;
+  }
 }
 
 #wrapper {

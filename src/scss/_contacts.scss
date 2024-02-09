@@ -1,0 +1,237 @@
+.contacts {
+  &-block {
+    padding-top: 80px;
+    padding-bottom: 64px;
+    background: linear-gradient( to right, #D0033F 0%, #D0033F 40%, #F1F1F1 40%, #F1F1F1 100% );
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      right: -1000px;
+      background: #F1F1F1;
+      top: 0;
+      z-index: -1;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: -1000px;
+      background: #D0033F;
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  &-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 40px;
+
+    &.black {
+      color: #161515;
+    }
+  }
+
+  &-form {
+    padding-left: 78px;
+  }
+
+  &-info {
+    padding-left: 60px;
+
+    &-block {
+      border-radius: 20px;
+      box-shadow: -5px 4px 33.5px 0px rgba(0, 0, 0, 0.08);
+      background: rgb(255, 255, 255);
+      padding: 40px;
+      padding-bottom: 48px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    &-content {
+      padding-bottom: 48px;
+      border-bottom: 1px solid #C8CFD4;
+      margin-bottom: 48px;
+
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border: none;
+      }
+    }
+
+    &-social {
+      max-width: 370px;
+      width: 100%;
+      margin-bottom: -24px;
+
+      a {
+        font-size: 22px;
+        font-weight: 600;
+        padding-left: 56px;
+        position: relative;
+        margin-bottom: 34px;
+        margin-right: 24px;
+        display: inline-block;
+        transition: color .2s ease-in-out;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: #D0033F;
+
+          .contacts-info-icon {
+            background-color: #D0033F;
+          }
+        }
+      }
+    }
+
+    &-requisites {
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    &-txt {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        color: #767F86;
+        margin-right: 10px;
+      }
+    }
+
+    &-inn {
+      margin-bottom: 16px;
+
+      span {
+        position: relative;
+        padding-right: 16px;
+        margin-right: 10px;
+
+        &::after {
+          content: "";
+          width: 4px;
+          height: 4px;
+          background-color: #767F86;
+          border-radius: 50%;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+
+          &::after {
+            content: none;
+          }
+        }
+      }
+    }
+
+    &-other {
+      display: flex;
+      align-items: center;
+
+      span {
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 42px;
+        color: #767F86;
+      }
+
+      a {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background-color: #767F86;
+        position: relative;
+        display: inline-block;
+        transition: background-color .2s ease-in-out;
+        margin-right: 14px;
+
+        &.link {
+          background-color: transparent;
+          width: auto;
+
+          &:hover {
+            background-color: transparent;
+            color: #D0033F;
+          }
+        }
+
+        &:hover {
+          background-color: #D0033F;
+        }
+      }
+
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+      }
+    }
+
+    &-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: #767F86;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: background-color .2s ease-in-out;
+
+      svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+      }
+    }
+  }
+
+  &-form {
+    max-width: 760px;
+
+    &-accept {
+      font-size: 14px;
+      font-weight: 400;
+      color: #767F86;
+    }
+
+    .ui-btn {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

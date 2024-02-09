@@ -23,6 +23,9 @@
   <!-- form styler -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQueryFormStyler/2.0.2/jquery.formstyler.min.css" integrity="sha512-qP7Bo11vBMwOisDf5u5XX4EG7PwtuTha6Ghh864As/xLSKdD5BbW5gVE2Tym6VerZFEev9OmmHV2BKuanp/WaA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- magnific -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -63,23 +66,119 @@
         </a>
 
         <div class="header-content-right">
-          <div class="header-cart">
+          <button class="header-cart">
             <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-cart"></use></svg>
             Корзина
-          </div>
+          </button>
         </div>
       </div>
     </header>
 
-    <div class="ui-navbar">
-      <div class="ui-breadcrumbs">
-        <a href="#" class="ui-breadcrumbs-link">Главная</a>
-        <span>Каталог</span>
+    <div class="cart">
+      <div class="cart-head">
+        <div class="cart-head-title">Ваша корзина</div>
+
+        <button class="cart-head-btn">
+          <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#close-cart"></use></svg>
+        </button>
       </div>
 
-      <a href="#" class="ui-back">
-        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#icon-back"></use></svg>
-        Вернуться назад
-      </a>
+      <div class="cart-body">
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div class="cart-item-img">
+              <a href="#">
+                <img src="./images/cart-item-1.png" alt="">
+              </a>
+            </div>
+
+            <div class="cart-item-right">
+              <div class="cart-item-top">
+                <div class="cart-item-txt">
+                  <div class="cart-item-title">
+                    <a href="#">Куртка Outer Shell</a>
+                  </div>
+                  <div class="cart-item-details">
+                    <span>Черная</span>
+                    <span>XL</span>
+                  </div>
+                </div>
+
+                <div class="cart-item-price">100  950 ₽ <span>300 950 ₽</span></div>
+              </div>
+
+
+            <div class="cart-item-control">
+              <div class="ui-number small">
+                <button class="ui-number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+                <img src="./images/icon/minus.svg" alt="">
+                </button>
+                <input type="number" min="1" value="1" readonly>
+                <button class="ui-number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+                  <img src="./images/icon/plus.svg" alt="">
+                </button>
+              </div>
+
+              <button class="ui-delete">
+                <img src="./images/icon/delete.svg" alt="">
+                Удалить
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="cart-item">
+          <div class="cart-item-info">
+            <div class="cart-item-img">
+              <a href="#">
+                <img src="./images/cart-item-2.png" alt="">
+              </a>
+            </div>
+
+            <div class="cart-item-right">
+              <div class="cart-item-top">
+                <div class="cart-item-txt">
+                  <div class="cart-item-title">
+                    <a href="#">Сигнальная рубашка-поло</a>
+                  </div>
+                  <div class="cart-item-details">
+                    <span>Оранжевое</span>
+                    <span>M</span>
+                  </div>
+                </div>
+
+                <div class="cart-item-price">15 950 ₽ <span>20 950 ₽</span></div>
+              </div>
+
+
+            <div class="cart-item-control">
+              <div class="ui-number small">
+                <button class="ui-number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+                <img src="./images/icon/minus.svg" alt="">
+                </button>
+                <input type="number" min="1" value="1" readonly>
+                <button class="ui-number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+                  <img src="./images/icon/plus.svg" alt="">
+                </button>
+              </div>
+
+              <button class="ui-delete">
+                <img src="./images/icon/delete.svg" alt="">
+                Удалить
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-footer-txt">
+          <div class="cart-footer-title">Стоимость итого:</div>
+          <div class="cart-footer-price">419 750 ₽</div>
+        </div>
+
+        <button class="ui-btn red">Оформить заявку</button>
+      </div>
     </div>
   </div>
