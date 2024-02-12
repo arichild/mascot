@@ -38,7 +38,8 @@
                   <label for="requisites" class="ui-label">Реквизиты компании <span>*</span></label>
                 </div>
                 <div class="ui-field">
-                  <textarea id="textbox" name="textbox" class="ui-input" rows="4" placeholder="Комментарий к заказу"></textarea>
+                  <textarea id="textbox" name="textbox" class="ui-input" rows="4"></textarea>
+                  <label for="requisites" class="ui-label">Комментарий к заказу</label>
                 </div>
 
                 <div class="ui-checkbox">
@@ -97,41 +98,43 @@
           </div>
           <div class="col-md-6">
             <div class="order-info-block">
-              <div class="order-item">
-                <div class="order-item-img">
-                  <a href="#">
-                    <img src="./images/order-item.png" alt="">
-                  </a>
-                </div>
+              <div class="order-items">
+                <div class="order-item">
+                  <div class="order-item-img">
+                    <a href="#">
+                      <img src="./images/order-item.png" alt="">
+                    </a>
+                  </div>
 
-                <div class="order-item-text">
-                  <div class="order-item-info">
-                    <div class="order-item-article">Артикул: 17001-411-01009-1</div>
-                    <div class="order-item-title"><a href="#">Куртка Outer Shell</a></div>
-                    <div class="order-item-details">
-                      <span>Черный цвет</span>
-                      <span>XL</span>
+                  <div class="order-item-text">
+                    <div class="order-item-info">
+                      <div class="order-item-article">Артикул: 17001-411-01009-1</div>
+                      <div class="order-item-title"><a href="#">Куртка Outer Shell</a></div>
+                      <div class="order-item-details">
+                        <span>Черный цвет</span>
+                        <span>XL</span>
+                      </div>
                     </div>
+
+                    <div class="order-item-price">15 950 ₽ <span>20 950 ₽</span></div>
                   </div>
 
-                  <div class="order-item-price">15 950 ₽ <span>20 950 ₽</span></div>
-                </div>
+                  <div class="order-item-control">
+                    <div class="ui-number">
+                      <button class="ui-number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+                      <img src="./images/icon/minus.svg" alt="">
+                      </button>
+                      <input type="number" min="1" value="1" readonly>
+                      <button class="ui-number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+                        <img src="./images/icon/plus.svg" alt="">
+                      </button>
+                    </div>
 
-                <div class="order-item-control">
-                  <div class="ui-number">
-                    <button class="ui-number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
-                    <img src="./images/icon/minus.svg" alt="">
-                    </button>
-                    <input type="number" min="1" value="1" readonly>
-                    <button class="ui-number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
-                      <img src="./images/icon/plus.svg" alt="">
+                    <button class="ui-delete">
+                      <img src="./images/icon/delete.svg" alt="">
+                      Удалить
                     </button>
                   </div>
-
-                  <button class="ui-delete">
-                    <img src="./images/icon/delete.svg" alt="">
-                    Удалить
-                  </button>
                 </div>
               </div>
 

@@ -149,6 +149,10 @@
       max-width: calc(100% - 100px);
       flex: 0 0 calc(100% - 100px);
 
+      .splide__slide img {
+        border-radius: 10px;
+      }
+
       .splide__arrow {
         width: 44px;
         height: 44px;

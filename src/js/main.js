@@ -240,6 +240,30 @@ $( document ).ready(function() {
     })
   }
 
+  const filterMore = document.querySelectorAll('.catalog-filter-more')
+
+  if(filterMore.length) {
+    filterMore.forEach(element => {
+      const label = element.textContent
+
+      element.addEventListener('click', () => {
+        const parent = element.closest('.catalog-filter-list')
+        const hiddenCheckbox = parent.querySelectorAll('.ui-checkbox.hidden')
+
+        hiddenCheckbox.forEach(check => {
+          check.classList.toggle('show')
+
+          if(check.classList.contains("show")) {
+            element.textContent = "скрыть"
+          } else {
+            element.textContent = label
+          }
+        });
+        element.classList.toggle('active')
+      })
+    });
+  }
+
   const deleteOrder = document.querySelectorAll('.order-item-control .ui-delete')
 
   if(deleteOrder.length) {
@@ -264,48 +288,64 @@ $( document ).ready(function() {
     });
   }
 
-  const main = new Splide( '.splide-slider-main', {
-    type       : 'fade',
-    pagination : false,
-    arrows     : true,
-    height: 790,
-    width: 790,
-  } );
+  const card = document.querySelector('.card-slider')
 
-  const thumbnails = new Splide( '.splide-slider-thumbnail', {
-    rewind          : true,
-    height: 790,
-    isNavigation    : true,
-    gap             : 20,
-    // focus           : 'center',
-    pagination      : false,
-    cover           : false,
-    arrows     : false,
-    autoHeight: true,
-    direction: 'ttb',
-    dragMinThreshold: {
-      mouse: 4,
-      touch: 10,
-    },
-    // breakpoints : {
-    //   640: {
-    //     fixedWidth  : 66,
-    //     fixedHeight : 38,
-    //   },
-    // },
-  } );
+  if(card) {
+    const main = new Splide( '.splide-slider-main', {
+      type       : 'fade',
+      pagination : false,
+      arrows     : true,
+      height: 790,
+      width: 790,
+    } );
 
-  main.sync( thumbnails );
-  main.mount();
-  thumbnails.mount();
+    const thumbnails = new Splide( '.splide-slider-thumbnail', {
+      rewind          : true,
+      height: 790,
+      isNavigation    : true,
+      gap             : 20,
+      pagination      : false,
+      cover           : false,
+      arrows     : false,
+      autoHeight: true,
+      direction: 'ttb',
+      dragMinThreshold: {
+        mouse: 4,
+        touch: 10,
+      },
+    });
 
-  const sliderOther = new Splide( '.splide.other', {
-    perPage: 4,
-    gap: 20,
-    pagination: false,
-    arrows: true,
-    drag: false,
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
+  }
 
+  if(document.querySelector('.splide.other')) {
+    const sliderOther = new Splide( '.splide.other', {
+      perPage: 4,
+      gap: 20,
+      pagination: false,
+      arrows: true,
+      drag: false,
+    }).mount();
+  }
 
-  }).mount();
+  const inputs = document.querySelectorAll('.ui-input')
+
+  if(inputs.length) {
+    inputs.forEach(element => {
+      element.addEventListener('blur', () => {
+        const parent = element.closest('.ui-field')
+        const label = parent.querySelector('.ui-label')
+
+        console.log(element.value === '')
+
+        if(element.value === '') {
+          label.classList.remove('active')
+        } else {
+          label.classList.add('active')
+        }
+      })
+    });
+  }
 });

@@ -1,6 +1,4 @@
 .ui-breadcrumbs {
-
-
   &-link {
     color: #161515;
     opacity: 0.7;
@@ -15,7 +13,7 @@
       content: "";
       margin-left: 10px;
       margin-right: 10px;
-      background-image: url('../../images/icon/icon-bread.svg');
+      background-image: url('../images/icon/icon-bread.svg');
       background-repeat: no-repeat;
       width: 20px;
       height: 20px;
@@ -239,6 +237,14 @@
   position: relative;
   padding-left: 30px;
 
+  &.hidden {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
+
   &-input {
     position: absolute;
     opacity: 0;
@@ -353,11 +359,11 @@
     &:focus {
       border-color: #D0033F;
 
-      &+svg {
+      &~svg {
         stroke: #D0033F;
       }
 
-      &+.clear {
+      &~.clear {
         opacity: 1;
       }
     }
@@ -598,11 +604,23 @@
     border-color: #EB8B32;
     background-color: #FCF4F0;
     margin-bottom: 8px;
+
+    // &~.ui-label {
+    //   // display: none;
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
 
   &.valid {
     border-color: #161515;
     background-color: #f1f1f1;
+
+    // &~.ui-label {
+    //   // display: none;
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
 
   &::placeholder {
@@ -618,9 +636,12 @@
   &:focus {
     border-color: #D0033F;
 
+    &~.ui-label {
+      // display: none;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
-
-
 }
 
 textarea.ui-input {
@@ -832,9 +853,17 @@ span.error {
   left: 20px;
   top: 16px;
   // transform: translate(0, -50%);
+  opacity: 1;
+  visibility: visible;
+  transition: visibility .2s ease-in-out, opacity .2s ease-in-out;
 
   span {
     color: #D0033F;
+  }
+
+  &.active {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -880,7 +909,7 @@ span.error {
   font-size: 15px;
   font-weight: 600;
   color: #5c5c5c;
-  transition: border-color .2s ease-in-out, color .2s ease-in-out;
+  transition: color .2s ease-in-out, border-color .2s ease-in-out;
 
   &:hover {
     border-color: #161515;
