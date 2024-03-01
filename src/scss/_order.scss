@@ -5,6 +5,7 @@
     padding: 0 100px;
     border-right: 1px solid #C8CFD4;
     position: relative;
+    // margin-bottom: 20px;
 
     &::after {
       content: "";
@@ -33,12 +34,14 @@
     }
 
     &-policy {
-      position: absolute;
-      bottom: 0;
-      left: 140px;
+      position: relative;
+      bottom: -80px;
+      // left: 100px;
       padding: 20px 0;
       font-size: 14px;
       font-weight: 400;
+      // max-width: 707px;
+      border-top: 1px solid #F1F1F1;
     }
 
     &-head {
@@ -100,6 +103,14 @@
       border-radius: 10px;
       padding: 38px 14px;
       margin-right: 10px;
+      position: relative;
+
+      img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
 
     &-txt {
@@ -114,7 +125,7 @@
   }
 
   &-items {
-    margin-bottom: 48px;
+    margin-bottom: 35px;
     max-height: 480px;
     overflow-x: hidden;
     overflow-y: auto;
@@ -226,5 +237,334 @@
         margin-bottom: 38px;
       }
     }
+  }
+
+  @media(max-width: 1680.99px) {
+     &-form {
+      padding: 0 40px;
+
+      // &-policy {
+      //   left: 40px;
+      // }
+     }
+
+     &-info {
+      &-block {
+        padding-left: 30px;
+        padding-right: 40px;
+      }
+     }
+  }
+
+  @media(max-width: 1440.99px) {
+    &-item {
+      .ui-number {
+        input[type="number"] {
+          height: 45px;
+          line-height: 45px;
+          padding: 0 45px;
+        }
+      }
+
+      &-img {
+        max-width: 115px;
+        height: 115px;
+        flex: 0 0 115px;
+        margin-right: 15px;
+      }
+
+      &-text {
+        max-width: calc(100% - 270px);
+        flex: 0 0 calc(100% - 270px);
+      }
+    }
+
+    &-form {
+      &-title {
+        font-size: 28px;
+      }
+
+      &-head {
+        margin-bottom: 35px;
+      }
+    }
+
+    &-info {
+      &-price {
+        font-size: 18px;
+        margin-bottom: 8px;
+
+        &.total {
+          font-size: 28px;
+        }
+      }
+
+      &-txt {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  @media(max-width: 1366.99px) {
+    padding: 40px 0 60px 0;
+
+    &-items {
+      margin-bottom: 40px;
+    }
+
+    &-item {
+      .ui-number {
+        input[type="number"] {
+          height: 42px;
+          line-height: 42px;
+          padding: 0 42px;
+        }
+      }
+    }
+
+     &-form {
+      padding-left: 0;
+      padding-right: 30px;
+
+      &::after {
+        height: 60px;
+        top: -60px;
+      }
+
+      &-policy {
+        bottom: -60px;
+      }
+     }
+
+     &-info {
+      &-block {
+        padding-left: 10px;
+        padding-right: 0;
+      }
+
+      &-txt {
+        margin-bottom: 40px;
+      }
+     }
+
+     &-item {
+      flex-wrap: wrap;
+
+      &-control {
+        .ui-number {
+          margin-bottom: 0;
+        }
+      }
+
+      &-info {
+        margin-bottom: 0;
+      }
+
+      &-img {
+        max-width: 100px;
+        height: 100px;
+        flex: 0 0 100px;
+        margin-right: 15px;
+      }
+
+      &-text {
+        max-width: calc(100% - 115px);
+        flex: 0 0 calc(100% - 115px);
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      &-price {
+        span {
+          display: block;
+        }
+      }
+
+      &-control {
+        width: 100%;
+        padding-left: 115px;
+      }
+     }
+  }
+
+  @media(max-width: 1024.99px) {
+    // padding: 40px 0;
+    padding: 20px 0 40px 0;
+
+    // .row {
+    //   flex-direction: column-reverse;
+    // }
+
+    // &-info {
+    //   &-block {
+    //     margin-bottom: 50px;
+    //   }
+    // }
+
+    .row {
+      flex-direction: column-reverse;
+    }
+
+    &-form {
+      border-right: none;
+      padding-right: 0;
+      // margin-bottom: 80px;
+
+      &-head {
+        margin-bottom: 30px;
+      }
+
+      &-policy {
+        // display: none;
+        bottom: -40px;
+        padding: 10px 0;
+        font-size: 12px;
+      }
+
+      &-title {
+        font-size: 26px;
+      }
+
+      &::after {
+        content: none;
+      }
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &-info {
+      &-block {
+        margin-bottom: 80px;
+      }
+
+      &-price {
+        &.total {
+          font-size: 26px;
+        }
+      }
+    }
+
+    &-item {
+      &-title {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media(max-width: 768.99px) {
+    // padding: 20px 0;
+    padding: 0 0 20px 0;
+
+    &-form {
+      &-head {
+        margin-bottom: 20px;
+      }
+
+      &-title {
+        font-size: 24px;
+      }
+
+      &-policy {
+        bottom: -20px;
+      }
+    }
+
+    &-info {
+      &-price {
+        font-size: 16px;
+
+        &.total {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &-item {
+      &-title {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media(max-width: 460.99px) {
+    .ui-checkbox {
+      font-size: 14px;
+    }
+
+     &-form {
+      &-title {
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      &-head {
+        flex-direction: column;
+        align-items: start;
+      }
+     }
+
+     &-info {
+      &-block {
+        padding-left: 0;
+      }
+
+      &-price {
+        &.total {
+          font-size: 22px;
+        }
+      }
+     }
+
+     &-item {
+      &-img {
+        max-width: 80px;
+        height: 80px;
+        flex: 0 0 80px;
+        margin-right: 10px;
+      }
+
+      &-text {
+        flex-direction: column;
+        margin-bottom: 10px;
+        max-width: calc(100% - 90px);
+        flex: 0 0 calc(100% - 90px);
+      }
+
+      &-title {
+        font-size: 16px;
+      }
+
+      &-price {
+        span {
+          margin-left: 0;
+        }
+      }
+
+      &-control {
+        padding-left: 90px;
+
+        .ui-number {
+          max-width: 100px;
+        }
+
+        .ui-number-minus {
+          width: 35px;
+        }
+
+        .ui-number-plus {
+          width: 35px;
+        }
+      }
+     }
+
+     &-warning {
+      &-txt {
+        padding: 20px;
+        font-size: 14px;
+      }
+     }
   }
 }

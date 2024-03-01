@@ -31,6 +31,10 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+
+  &.active {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -44,6 +48,12 @@ body {
   line-height: 1.42;
   color: #161515;
   background-color: #fff;
+
+  &.active {
+    overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -85,4 +95,14 @@ body {
   max-width: $widthContainer;
   padding-left: $paddingContainer;
   padding-right: $paddingContainer;
+
+  @media(max-width: 1024.99px) {
+     padding-left: 20px;
+     padding-right: 20px;
+  }
+
+  @media(max-width: 460.99px) {
+     padding-left: 14px;
+     padding-right: 14px;
+  }
 }

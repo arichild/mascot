@@ -1,6 +1,18 @@
 $( document ).ready(function() {
   $('select.ui-pgn-select').styler();
 
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  // We listen to the resize event
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
   $(document).on("click", ".mfp-link", function () {
     var a = $(this);
 
@@ -90,7 +102,7 @@ $( document ).ready(function() {
   }
 
   if(document.querySelector('.catalog-info')) {
-    new Splide( '.splide.catalog-info' ).mount();
+    new Splide( '.splide.info' ).mount();
   }
 
   const btnFilter = document.querySelectorAll('.catalog-filter-btn')
@@ -99,7 +111,7 @@ $( document ).ready(function() {
     btnFilter.forEach(element => {
       element.addEventListener('click', () => {
         const parent = element.closest('.catalog-filter-type')
-        const title = parent.querySelector('.catalog-filter-title a')
+        const title = parent.querySelector('.catalog-filter-title')
         const list = parent.querySelector('.catalog-filter-list')
 
         title.classList.toggle('show')
@@ -124,6 +136,7 @@ $( document ).ready(function() {
   if(document.querySelector('[data-mousemove-swipe]')) {
     const swiperCatalog = new Swiper('.swiper.slider-item', {
       // If we need pagination
+      // effect: 'fade',
       pagination: {
         el: '.swiper-pagination',
       }
@@ -162,6 +175,20 @@ $( document ).ready(function() {
 
   const btnView1 = document.querySelector('.view-1')
   const btnView2 = document.querySelector('.view-2')
+  const btnViewMob = document.querySelector('.catalog-mob-view')
+
+  if(btnViewMob) {
+    btnViewMob.addEventListener('click', () => {
+      const columns = document.querySelectorAll('.catalog-items .col-md-3')
+
+      columns.forEach(element => {
+        element.classList.toggle('col-ss-12')
+        element.classList.toggle('col-ss-6')
+      });
+
+      btnViewMob.classList.toggle("active")
+    })
+  }
 
   if(btnView1) {
     btnView1.addEventListener('click', () => {
@@ -172,6 +199,9 @@ $( document ).ready(function() {
 
         element.classList.add('col-md-4')
         element.classList.remove('col-md-3')
+
+        element.classList.add('col-sm-12')
+        element.classList.remove('col-sm-6')
 
         elementBottom.classList.add('view-1')
       });
@@ -191,6 +221,9 @@ $( document ).ready(function() {
         element.classList.add('col-md-3')
         element.classList.remove('col-md-4')
 
+        element.classList.remove('col-sm-12')
+        element.classList.add('col-sm-6')
+
         elementBottom.classList.remove('view-1')
       });
 
@@ -202,27 +235,31 @@ $( document ).ready(function() {
   const btnOpenCart = document.querySelector('.header-cart')
   const cart = document.querySelector('.cart')
 
-  if(btnOpenCart) {
-    btnOpenCart.addEventListener('click', () => {
-
-      cart.classList.add('active')
-    })
-  }
-
   const btnCloseCart = document.querySelector('.cart-head-btn')
 
   if(btnCloseCart) {
     btnCloseCart.addEventListener('click', () => {
 
-      cart.classList.remove('active')
+      cart.classList.toggle('active')
     })
   }
 
-  $(document).on('mouseup',function(e) {
-    if ($('.cart').has(e.target).length === 0) {
-      cart.classList.remove('active');
-    }
-  });
+
+  if(btnOpenCart) {
+    btnOpenCart.addEventListener('click', () => {
+      if(window.innerWidth <= 1024) {
+        const body = document.body
+        const html = document.documentElement
+        const header = document.querySelector('.header')
+
+        body.classList.toggle('active')
+        html.classList.toggle('active')
+        header.classList.toggle('active')
+      }
+
+      cart.classList.toggle('active')
+    })
+  }
 
   const check = document.querySelector('.form-switch input')
 
@@ -295,25 +332,52 @@ $( document ).ready(function() {
       type       : 'fade',
       pagination : false,
       arrows     : true,
-      height: 790,
       width: 790,
+      // height: 500
+
+      breakpoints: {
+        1024: {
+          height: 580
+        },
+        768: {
+          height: 335
+        },
+      }
     } );
 
     const thumbnails = new Splide( '.splide-slider-thumbnail', {
       rewind          : true,
-      height: 790,
+      autoHeight: true,
+      height: "auto",
       isNavigation    : true,
       gap             : 20,
       pagination      : false,
       cover           : false,
       arrows     : false,
-      autoHeight: true,
       direction: 'ttb',
       dragMinThreshold: {
         mouse: 4,
         touch: 10,
       },
+
+      breakpoints: {
+        768: {
+          direction: 'ltr',
+          perPage: 4,
+          gap: 12
+        },
+      }
     });
+
+    thumbnails.on( 'resize', function () {
+      if(document.documentElement.clientWidth > 768) {
+        thumbnails.root.style.overflow = "hidden"
+        thumbnails.root.style.height = `${main.root.offsetHeight}px`
+      } else {
+        thumbnails.root.style.height = `100%`
+        // thumbnails.root.style.overflow = "visible"
+      }
+    } );
 
     main.sync( thumbnails );
     main.mount();
@@ -326,7 +390,22 @@ $( document ).ready(function() {
       gap: 20,
       pagination: false,
       arrows: true,
-      drag: false,
+      // drag: false,
+
+      breakpoints: {
+        1024: {
+          perPage: 3,
+          gap: 10
+        },
+        768: {
+          perPage: 2,
+        },
+        460: {
+          perPage: 1,
+          // destroy: true
+          padding: { right: 45 }
+        },
+      }
     }).mount();
   }
 
@@ -347,5 +426,72 @@ $( document ).ready(function() {
         }
       })
     });
+  }
+
+  const mobCategoryBtn = document.querySelector('.catalog-mob-category')
+
+  if(mobCategoryBtn) {
+    mobCategoryBtn.addEventListener('click', () => {
+      const mobCategoryMenu = document.querySelector('.mobile-category')
+      const mobBg = document.querySelector('.mobile-bg')
+
+      mobCategoryMenu.classList.add('active')
+      mobBg.classList.add('active')
+    })
+  }
+
+  const mobFilteryBtn = document.querySelector('.catalog-mob-filter')
+
+  if(mobFilteryBtn) {
+    mobFilteryBtn.addEventListener('click', () => {
+      const mobFilterMenu = document.querySelector('.mobile-filter')
+      const mobBg = document.querySelector('.mobile-bg')
+
+      mobFilterMenu.classList.add('active')
+      mobBg.classList.add('active')
+    })
+  }
+
+  const btnCloseFilter = document.querySelector('.mobile-menu-btn')
+
+  if(btnCloseCart) {
+    btnCloseFilter.addEventListener('click', () => {
+      const filterMenu = btnCloseFilter.closest('.mobile')
+      const mobBg = document.querySelector('.mobile-bg')
+
+      filterMenu.classList.remove('active')
+      mobBg.classList.remove('active')
+    })
+  }
+
+  $(document).on('mouseup',function(e) {
+    if(window.innerWidth > 1024) {
+      if ($('.cart').has(e.target).length === 0) {
+        $('.cart').removeClass('active');
+      }
+    }
+    if ($('.mobile-category.active').has(e.target).length === 0 && $('.mobile-filter.active').has(e.target).length === 0) {
+      $('.mobile-category.active').removeClass('active');
+      $('.mobile-filter.active').removeClass('active');
+
+      $('.mobile-bg').removeClass('active');
+    }
+  });
+
+  const burgerBtn = document.querySelector('.header-burger')
+
+  if(burgerBtn) {
+    burgerBtn.addEventListener('click', () => {
+      const burgerMenu = document.querySelector('.burger-menu')
+      const header = document.querySelector('.header')
+      const body = document.body
+      const html = document.documentElement
+
+      burgerBtn.classList.toggle('active')
+      burgerMenu.classList.toggle('active')
+      header.classList.toggle('active')
+      body.classList.toggle('active')
+      html.classList.toggle('active')
+    })
   }
 });

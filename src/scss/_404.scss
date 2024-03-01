@@ -27,4 +27,70 @@
   .ui-btn {
     max-width: 235px;
   }
+
+  @media(max-width: 1680.99px) {
+    padding: 80px 0 100px 0;
+
+     &-img {
+      max-width: 400px;
+      margin: 0 auto 40px;
+     }
+
+     &-txt {
+      margin-bottom: 40px;
+     }
+
+     &-title {
+      font-size: 28px;
+      margin-bottom: 24px;
+     }
+
+     &-subtitle {
+      font-size: 16px;
+     }
+  }
+
+  @media(max-width: 1440.99px) {
+    padding: 60px 0 80px 0;
+
+    &-img {
+      max-width: 350px;
+      margin: 0 auto 30px;
+     }
+
+     &-txt {
+      margin-bottom: 30px;
+     }
+
+     &-title {
+      font-size: 25px;
+      margin-bottom: 20px;
+     }
+  }
+
+  @media(max-width: 1024.99px) {
+    padding: 40px 0 60px 0;
+
+    &-img {
+      max-width: 300px;
+      margin: 0 auto 20px;
+     }
+
+     &-txt {
+      margin-bottom: 20px;
+     }
+
+     &-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+     }
+  }
+
+  @media(max-width: 460.99px) {
+    padding: 20px 0 40px 0;
+
+    &-img {
+      max-width: 250px;
+     }
+  }
 }
