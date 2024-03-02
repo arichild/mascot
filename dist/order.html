@@ -1,0 +1,175 @@
+<!--#include file="inc-header.html"-->
+
+<div class="middle" id="middle">
+  <div class="container">
+    <div class="order">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="order-form">
+            <div class="order-form-head">
+              <div class="order-form-title">Ваша заявка</div>
+
+              <label class="form-switch">
+                Физ. лицо
+              <input type="checkbox">
+              <i></i> Юр.лицо </label>
+            </div>
+
+            <form action="#" class="form-validate">
+              <div class="ui-fields">
+                <div class="ui-field">
+                  <input type="text" class="ui-input" id="name" name="name">
+                  <label for="name" class="ui-label">Ваше ФИО <span>*</span></label>
+                </div>
+                <div class="ui-field">
+                  <input type="text" class="ui-input" id="email" name="email">
+                  <label for="email" class="ui-label">Ваш e-mail <span>*</span></label>
+                </div>
+                <div class="ui-field">
+                  <input type="text" class="ui-input phone-mask" id="phone" name="phone">
+                  <label for="phone" class="ui-label">Ваш номер телефон <span>*</span></label>
+                </div>
+                <div class="ui-field company hidden">
+                  <input type="text" class="ui-input" id="company" name="company">
+                  <label for="company" class="ui-label">Наименование компании <span>*</span></label>
+                </div>
+                <div class="ui-field company hidden">
+                  <input type="text" class="ui-input" id="requisites" name="requisites">
+                  <label for="requisites" class="ui-label">Реквизиты компании <span>*</span></label>
+                </div>
+                <div class="ui-field">
+                  <textarea id="textbox" name="textbox" class="ui-input" rows="4"></textarea>
+                  <label for="requisites" class="ui-label">Комментарий к заказу</label>
+                </div>
+
+                <div class="ui-checkbox">
+                  <input type="checkbox" class="ui-checkbox-input" id="checkbox-1" name="checkbox-1">
+                  <label for="checkbox-1" class="ui-checkbox-label white">Сохраните эту информацию для следующего раза</label>
+                </div>
+              </div>
+
+              <button class="ui-btn red">Оставить заявку</button>
+            </form>
+
+            <div class="order-form-policy">Все права защищены. Магазин Mascot Workwear.</div>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              jQuery(document).ready(function ($) {
+                $(".form-validate").validate({
+                  errorElement: "span",
+
+                  rules: {
+                    name: {
+                      required: true,
+                      lettersonly: true,
+                    },
+                    company: {
+                      required: true,
+                      // lettersonly: true,
+                    },
+                    requisites: {
+                      required: true,
+                      // lettersonly: true,
+                    },
+                    phone: {
+                      required: true,
+                      phone: true,
+                    },
+                    email: {
+                      required: true,
+                      email: true,
+                    },
+                  },
+
+                  messages: {
+                    email: 'Введите корректный email',
+                  },
+
+
+                  submitHandler: function (form) {
+                    // showPopup('./popup/success.html')
+                  },
+                });
+              })
+            });
+          </script>
+          </div>
+          <div class="col-md-6">
+            <div class="order-info-block">
+              <div class="order-items">
+                <div class="order-item">
+                  <div class="order-item-img">
+                    <a href="#">
+                      <img src="./images/order-item.png" alt="">
+                    </a>
+                  </div>
+
+                  <div class="order-item-text">
+                    <div class="order-item-info">
+                      <div class="order-item-article">Артикул: 17001-411-01009-1</div>
+                      <div class="order-item-title"><a href="#">Куртка Outer Shell</a></div>
+                      <div class="order-item-details">
+                        <span>Черный цвет</span>
+                        <span>XL</span>
+                      </div>
+                    </div>
+
+                    <div class="order-item-price">15 950 ₽ <span>20 950 ₽</span></div>
+                  </div>
+
+                  <div class="order-item-control">
+                    <div class="ui-number">
+                      <button class="ui-number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">
+                        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#minus"></use></svg>
+                      </button>
+                      <input type="number" min="1" value="1" readonly>
+                      <button class="ui-number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">
+                        <svg class="sprite"><use xlink:href="./images/svg/symbols.svg#plus"></use></svg>
+                      </button>
+                    </div>
+
+                    <button class="ui-delete">
+                      <img src="./images/icon/delete.svg" alt="">
+                      Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="order-info-txt">
+                <div class="order-info-price">
+                  <div class="order-info-title">Промежуточный итог</div>
+                  <div class="order-info-subtitle">15 950 ₽</div>
+                </div>
+
+                <div class="order-info-price">
+                  <div class="order-info-title">Скидка</div>
+                  <div class="order-info-subtitle red">- 5 000 ₽</div>
+                </div>
+
+                <div class="order-info-price total">
+                  <div class="order-info-title">Итого</div>
+                  <div class="order-info-subtitle">15 950 ₽</div>
+                </div>
+              </div>
+
+              <div class="order-warning">
+                <div class="order-warning-icon">
+                  <img src="./images/icon/icon-warn.svg" alt="">
+                </div>
+
+                <div class="order-warning-txt">
+                  Стоимость доставки рассчитывается индивидуально исходя из параметров вашего заказа, после оформление заявки с вами свяжется менеджер и оценит доставку.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--#include file="inc-footer.html"-->
