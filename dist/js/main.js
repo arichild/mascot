@@ -149,7 +149,7 @@ $( document ).ready(function() {
         if(targetElement.closest('[data-mousemove-swipe]')) {
           const sliderElement = targetElement.closest('[data-mousemove-swipe]')
 
-          const sliderItem = swiperCatalog[getIndex(sliderElement)]
+          const sliderItem = swiperCatalog[getIndex(sliderElement)] || swiperCatalog
           const sliderLength = sliderItem.slides.length
 
           if(sliderLength > 1) {
