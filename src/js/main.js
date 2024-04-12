@@ -137,6 +137,8 @@ $( document ).ready(function() {
     const swiperCatalog = new Swiper('.swiper.slider-item', {
       // If we need pagination
       // effect: 'fade',
+      // width: 330,
+      // setWrapperSize: true,
       pagination: {
         el: '.swiper-pagination',
       }
@@ -313,17 +315,17 @@ $( document ).ready(function() {
     });
   }
 
-  const deleteCartItem = document.querySelectorAll('.cart-item .ui-delete')
+  // const deleteCartItem = document.querySelectorAll('.cart-item .ui-delete')
 
-  if(deleteCartItem.length) {
-    deleteCartItem.forEach(element => {
-      element.addEventListener('click', () => {
-        const item = element.closest('.cart-item')
+  // if(deleteCartItem.length) {
+  //   deleteCartItem.forEach(element => {
+  //     element.addEventListener('click', () => {
+  //       const item = element.closest('.cart-item')
 
-        item.remove()
-      })
-    });
-  }
+  //       item.remove()
+  //     })
+  //   });
+  // }
 
   const card = document.querySelector('.card-slider')
 
@@ -454,7 +456,7 @@ $( document ).ready(function() {
 
   const btnCloseFilter = document.querySelector('.mobile-menu-btn')
 
-  if(btnCloseCart) {
+  if(btnCloseFilter) {
     btnCloseFilter.addEventListener('click', () => {
       const filterMenu = btnCloseFilter.closest('.mobile')
       const mobBg = document.querySelector('.mobile-bg')

@@ -560,13 +560,23 @@
 
     &-img {
       margin-bottom: 20px;
-      border-radius: 10px;
-      overflow: hidden;
-      line-height: 0;
+      // border-radius: 10px;
+      // overflow: hidden;
+      // line-height: 0;
+
+      a {
+        display: block;
+      }
 
       .swiper-slide {
         text-align: center;
+        background-color: #fff;
+        min-width: 100% !important;
+        overflow: hidden;
+        line-height: 0;
+        border-radius: 10px;
       }
+
 
       img {
         aspect-ratio: 1;
