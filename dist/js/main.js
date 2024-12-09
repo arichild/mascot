@@ -121,6 +121,22 @@ $( document ).ready(function() {
     });
   }
 
+  const btnNavCatalog = document.querySelectorAll('.catalog-nav-btn')
+
+  if(btnNavCatalog.length) {
+    btnNavCatalog.forEach(element => {
+      element.addEventListener('click', () => {
+        const parent = element.closest('.catalog-nav-type')
+        const title = parent.querySelector('.catalog-nav-title')
+        const list = parent.querySelector('.catalog-nav-list')
+
+        title.classList.toggle('show')
+        list.classList.toggle('show')
+        element.classList.toggle('show')
+      })
+    });
+  }
+
   const btnClear = document.querySelector('.clear')
 
   if(btnClear) {
@@ -246,7 +262,6 @@ $( document ).ready(function() {
     })
   }
 
-
   if(btnOpenCart) {
     btnOpenCart.addEventListener('click', () => {
       if(window.innerWidth <= 1024) {
@@ -260,6 +275,33 @@ $( document ).ready(function() {
       }
 
       cart.classList.toggle('active')
+    })
+  }
+
+  const btnOpenCatalog = document.querySelector('.show-catalog')
+  const catalog = document.querySelector('.catalog-burger')
+  const btnCloseCatalog = document.querySelector('.catalog-header-close')
+
+  if(btnCloseCatalog) {
+    btnCloseCatalog.addEventListener('click', () => {
+
+      catalog.classList.toggle('active')
+    })
+  }
+
+  if(btnOpenCatalog) {
+    btnOpenCatalog.addEventListener('click', () => {
+      if(window.innerWidth <= 1024) {
+        const body = document.body
+        const html = document.documentElement
+        const header = document.querySelector('.header')
+
+        body.classList.toggle('active')
+        html.classList.toggle('active')
+        header.classList.toggle('active')
+      }
+
+      catalog.classList.toggle('active')
     })
   }
 
@@ -470,6 +512,10 @@ $( document ).ready(function() {
     if(window.innerWidth > 1024) {
       if ($('.cart').has(e.target).length === 0) {
         $('.cart').removeClass('active');
+      }
+
+      if ($('.catalog-burger').has(e.target).length === 0) {
+        $('.catalog-burger').removeClass('active');
       }
     }
     if ($('.mobile-category.active').has(e.target).length === 0 && $('.mobile-filter.active').has(e.target).length === 0) {
